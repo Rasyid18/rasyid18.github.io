@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Card, Flex, Heading, Link, List, Mark, Separator, Stack, Text, Timeline, VStack } from "@chakra-ui/react";
+import { Box, Card, Link, List, Mark, Separator, Stack, Text, Timeline, VStack } from "@chakra-ui/react";
 import Layout from "@/components/Layout";
 import { useEffect, useState } from "react";
 import { LuCheck, LuCode } from "react-icons/lu";
@@ -236,7 +236,7 @@ export default function Home() {
 									</Timeline.Connector>
 									<Timeline.Content>
 										<Timeline.Title>
-											<Mark variant="text">Bachelor's Degree</Mark> in <Mark variant="text">Information System</Mark>
+											<Mark variant="text">Bachelor&apos;s Degree</Mark> in <Mark variant="text">Information System</Mark>
 										</Timeline.Title>
 										<Timeline.Description>
 											<Stack direction="row">
@@ -257,7 +257,7 @@ export default function Home() {
 									</Timeline.Connector>
 									<Timeline.Content>
 										<Timeline.Title>
-											<Mark variant="text">Associate's Degree</Mark> in{" "}
+											<Mark variant="text">Associate&apos;s Degree</Mark> in{" "}
 											<Mark variant="text">Computer and Informatics Engineering</Mark>
 										</Timeline.Title>
 										<Timeline.Description>
