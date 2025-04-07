@@ -42,7 +42,7 @@ export default function Home() {
 	return (
 		<Layout>
 			<Stack direction="row" gap={8}>
-				<Stack>
+				<Stack gap={10}>
 					<Box id={"about"} key={"about"}>
 						<Card.Root variant="elevated">
 							<Card.Body>
