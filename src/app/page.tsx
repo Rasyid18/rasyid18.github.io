@@ -1,48 +1,14 @@
 "use client";
 
-import { Box, Card, Link, List, Mark, Separator, Stack, Text, Timeline, VStack } from "@chakra-ui/react";
+import { Box, Card, Container, List, Mark, Separator, Stack, Text, Timeline } from "@chakra-ui/react";
 import Layout from "@/components/Layout";
-import { useEffect, useState } from "react";
 import { LuCheck, LuCode } from "react-icons/lu";
 
-const sections = ["about", "skills", "experience", "education"];
-
-function useScrollSpy(sectionIds: string[], offset = 0) {
-	const [activeId, setActiveId] = useState<string>("");
-
-	useEffect(() => {
-		const observer = new IntersectionObserver(
-			(entries) => {
-				entries.forEach((entry) => {
-					if (entry.isIntersecting) {
-						setActiveId(entry.target.id);
-					}
-				});
-			},
-			{
-				rootMargin: `-${offset}px 0px -70% 0px`,
-				threshold: 0.1,
-			}
-		);
-
-		sectionIds.forEach((id) => {
-			const el = document.getElementById(id);
-			if (el) observer.observe(el);
-		});
-
-		return () => observer.disconnect();
-	}, [sectionIds, offset]);
-
-	return activeId;
-}
-
 export default function Home() {
-	const activeSection = useScrollSpy(sections, 80);
-
 	return (
 		<Layout>
-			<Stack direction="row" gap={8}>
-				<Stack gap={10}>
+			<Container maxW="5xl">
+				<Stack gap={4}>
 					<Box id={"about"} key={"about"}>
 						<Card.Root variant="elevated">
 							<Card.Body>
@@ -274,23 +240,7 @@ export default function Home() {
 						</Stack>
 					</Box>
 				</Stack>
-
-				<Box width={100}>
-					<VStack as="nav" position="fixed" right={4} top="20vh" align="flex-end" gap={4}>
-						{sections.map((section) => (
-							<Link
-								key={section}
-								href={`#${section}`}
-								fontWeight={activeSection === section ? "bold" : "normal"}
-								color={activeSection === section ? "teal.500" : "gray.600"}
-								_hover={{ textDecoration: "underline" }}
-							>
-								{section.charAt(0).toUpperCase() + section.slice(1)}
-							</Link>
-						))}
-					</VStack>
-				</Box>
-			</Stack>
+			</Container>
 		</Layout>
 	);
 }
