@@ -6,8 +6,8 @@ export default function Hero() {
 	return (
 		<Box as="section" pt={12} pb={12} mb={8} bg="gray.200">
 			<Container maxW="container.md" textAlign="center">
-				<HStack gap={10} pt={8} pb={8}>
-					<Image src="/static/images/my-profile.jpg" alt="my-profile" maxW={80} />
+				<Stack direction={{md: "row", smDown: "column"}} alignItems={{smDown: "center"}} gap={10} pt={8} pb={8}>
+					<Image src="/static/images/my-profile.jpg" alt="my-profile" maxW={80} fit={"contain"} />
 					<Stack direction="column" gap={2}>
 						<Heading as="h1" size="2xl" mb={4} color={"gray.700"}>
 							Harun Al Rasyid - Empowering Businesses with Scalable Web Solutions
@@ -43,7 +43,7 @@ export default function Hero() {
 							</IconButton>
 						</HStack>
 					</Stack>
-				</HStack>
+				</Stack>
 			</Container>
 		</Box>
 	);
