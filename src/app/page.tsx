@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Card, Container, List, Mark, Separator, Stack, Text, Timeline } from "@chakra-ui/react";
-import Layout from "@/components/Layout";
+import Layout from "@/components/template/Layout";
 import { LuCheck, LuCode } from "react-icons/lu";
 
 export default function Home() {
